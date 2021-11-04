@@ -37,5 +37,6 @@ int		libere(t_list *list);
 int		swap_a(t_list *a);
 int		swap_b(t_list *b);
 int		swap_s(t_list *a, t_list *b);
-
+int		push_a(t_list *a, t_list *b);
+int		push_b(t_list *a, t_list *b);
 #endif
