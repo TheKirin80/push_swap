@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:45:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/04 15:00:58 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/04 17:30:00 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	gest_error(t_list *a, t_list *b)
 {
 	libere(a);
 	libere(b);
-	ft_putstr("ERROR");
+	ft_putstr("ERROR\n");
 	return (0);
 }
 

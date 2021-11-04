@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:34:01 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/04 14:38:42 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/04 17:58:28 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	test_chaine(char *str)
 {
 	int	i;
 
+	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
 		str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 		i++;
@@ -30,12 +31,12 @@ int	test_chaine(char *str)
 	return (OK);
 }
 
-int		ft_atoi(char *str)
+long		ft_atoi(char *str)
 {
 	int		i;
-	int		signe;
+	long		signe;
 	long	res;
-	int		ret;
+	long	ret;
 
 	i = 0;
 	signe = 1;
@@ -62,10 +63,10 @@ void	ft_putstr(char *s)
 {
 	int		len;
 
-	if (s != NULL && fd >= 0)
+	if (s != NULL)
 	{
 		len = ft_strlen(s);
-		write(fd, s, len);
+		write(1, s, len);
 	}
 }
 

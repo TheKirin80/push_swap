@@ -1,4 +1,4 @@
-SRCS	= 
+SRCS	= push.c rotate.c rrotate.c swap.c tool.c list.c error.c maint.c 
 
 SRCSBON	=
 
@@ -19,11 +19,11 @@ CFLAGS	= -Wall -Wextra -Werror
 .c.o :
 			${CC} ${CFLAGS} ${INC} -o $@ -c $<
 
-${NAME}:	${OBJS} ft_cub.h
-			${CC}  ${CFLAGS} ${OBJS}
+${NAME}:	${OBJS} 
+			${CC}  ${CFLAGS} ${OBJS} -o ${NAME}
 
-bonus:		${OBJS} ${OBJSBON} ft_cub.h
-			${CCLIB} libftcub.a ${OBJS} ${OBJSBON}
+bonus:		${OBJS} ${OBJSBON} 
+			${CCLIB} ${OBJS} ${OBJSBON}
 
 all:		${NAME}
 
