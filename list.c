@@ -6,23 +6,25 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:44:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/04 18:13:46 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:50:21 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		init_list(t_list *list)
+void	init_list(t_list *list)
 {
 	list->first = NULL;
 	list->last = NULL;
 }
 
-int			add_element(t_list *list, int add)
+int	add_element(t_list *list, int add)
 {
 	t_member	*new;
-	if (!(new = malloc(sizeof(t_member))))
-		return(ERROR);
+
+	new = malloc(sizeof(t_member));
+	if (!(new))
+		return (ERROR);
 	new->val = add;
 	new->suiv = NULL;
 	new->prec = list->last;
@@ -34,10 +36,10 @@ int			add_element(t_list *list, int add)
 	return (OK);
 }
 
-int			rempli_list(t_list *list, char **av)
+int	rempli_list(t_list *list, char **av)
 {
 	int		i;
-	long 	testres;
+	long	testres;
 	int		res;
 
 	i = 1;
@@ -58,6 +60,3 @@ int			rempli_list(t_list *list, char **av)
 	}
 	return (OK);
 }
-
-
-

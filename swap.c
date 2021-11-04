@@ -6,13 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:31:39 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/04 18:25:05 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:54:16 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap_a(t_list *a)
+int	swap_a(t_list *a, int i)
 {
 	t_member	*un;
 	t_member	*deux;
@@ -29,11 +29,12 @@ int	swap_a(t_list *a)
 	deux->prec = NULL;
 	trois->prec = un;
 	a->first = deux;
-	ft_putstr("sa\n");
+	if (i == OK)
+		ft_putstr("sa\n");
 	return (0);
 }
 
-int	swap_b(t_list *b)
+int	swap_b(t_list *b, int i)
 {
 	t_member	*un;
 	t_member	*deux;
@@ -50,14 +51,15 @@ int	swap_b(t_list *b)
 	deux->prec = NULL;
 	trois->prec = un;
 	b->first = deux;
-	ft_putstr("sb\n");
+	if (i == OK)
+		ft_putstr("sb\n");
 	return (0);
 }
 
 int	swap_s(t_list *a, t_list *b)
 {
-	swap_a(a);
-	swap_b(b);
+	swap_a(a, ERROR);
+	swap_b(b, ERROR);
 	ft_putstr("ss\n");
 	return (0);
 }
