@@ -46,4 +46,6 @@ int		rotate_r(t_list *a, t_list *b);
 int		rrotate_a(t_list *list, int i);
 int		rrotate_b(t_list *list, int i);
 int		rrotate_r(t_list *a, t_list *b);
+int		croissant(t_list *list);
+int		push_swap(t_list *a, t_list *b);
 #endif

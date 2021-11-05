@@ -57,7 +57,7 @@ int main(int ac, char **av)
     // printlists(&a, &b);
     // push_b(&a, &b);
     // printlists(&a, &b);
-    rotate_a(&a, OK);
+    // rotate_a(&a, OK);
     // rotate_b(&b, OK);
     // printlists(&a, &b);
     // rrotate_a(&a, OK);
@@ -66,6 +66,7 @@ int main(int ac, char **av)
     // rotate_r(&a, &b);
     // printlists(&a, &b);
     // rrotate_r(&a, &b);
+    push_swap(&a, &b);
     printlists(&a, &b);
     libere(&a);
     libere(&b);
