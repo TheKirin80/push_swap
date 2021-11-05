@@ -45,28 +45,27 @@ int main(int ac, char **av)
 
     (void)ac;
 	init_list(&b);
-	if (rempli_list(&a, av) == ERROR)
-	{
-		gest_error(&a, &b);
-		return (0);
-	}
+	if (rempli_list(&a, av) == ERROR || test_list(&a) == ERROR)
+		return (gest_error(&a, &b));
+    
+
     printf("debut test \n");
     printlists(&a, &b);
-    push_b(&a, &b);
-    printlists(&a, &b);
-    push_b(&a, &b);
-    printlists(&a, &b);
-    push_b(&a, &b);
-    printlists(&a, &b);
+    // push_b(&a, &b);
+    // printlists(&a, &b);
+    // push_b(&a, &b);
+    // printlists(&a, &b);
+    // push_b(&a, &b);
+    // printlists(&a, &b);
     rotate_a(&a, OK);
-    rotate_b(&b, OK);
-    printlists(&a, &b);
-    rrotate_a(&a, OK);
-    rrotate_b(&b, OK);
-    printlists(&a, &b);
-    rotate_r(&a, &b);
-    printlists(&a, &b);
-    rrotate_r(&a, &b);
+    // rotate_b(&b, OK);
+    // printlists(&a, &b);
+    // rrotate_a(&a, OK);
+    // rrotate_b(&b, OK);
+    // printlists(&a, &b);
+    // rotate_r(&a, &b);
+    // printlists(&a, &b);
+    // rrotate_r(&a, &b);
     printlists(&a, &b);
     libere(&a);
     libere(&b);

@@ -27,11 +27,12 @@ struct s_list
 };
 
 int		ft_strlen(char *s);
-long		ft_atoi(char *str);
+long	ft_atoi(char *str);
 int		test_chaine(char *str);
 void	ft_putstr(char *s);
 void	init_list(t_list *list);
 int		rempli_list(t_list *list, char **av);
+int		test_list(t_list *list);
 int		gest_error(t_list *a, t_list *b);
 int		libere(t_list *list);
 int		swap_a(t_list *a, int i);
