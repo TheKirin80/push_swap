@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:28:33 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/08 12:23:23 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:46:37 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,15 @@ int	rotate_r(t_list *a, t_list *b)
 	return (0);
 }
 
-void	rot(t_list *list, t_member *trot)
+void	rot(char c, t_list *list, t_member *trot)
 {
-	while (list->first != trot)
-		rotate_a(list, OK);
+	if (c == 'a')
+		while (list->first != trot)
+			rotate_a(list, OK);
+	else
+		while (list->first != trot)
+		{
+			rotate_b(list, OK);
+			printf("\ndans ROT  trot pos : %i\n", trot->pos);
+		}
 }
