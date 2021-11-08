@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:05:22 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/04 20:13:00 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/08 12:21:24 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,10 @@ int	rrotate_r(t_list *a, t_list *b)
 	rrotate_b(b, ERROR);
 	ft_putstr("rrr\n");
 	return (0);
+}
+
+void	rrot(t_list *list, t_member *trot)
+{
+	while (list->first != trot)
+		rrotate_a(list, OK);
 }

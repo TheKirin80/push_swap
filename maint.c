@@ -1,9 +1,15 @@
 #include "push_swap.h"
 
+void printfi(int i)
+{
+	printf ("Je suis ici a i = %i\n", i);
+}
+
 void    printlist(t_list *a)
 {
     int i = 1;
     t_member    *trot = a->first;
+    printf("\n");
     while ((trot != NULL))
     {
         
@@ -18,13 +24,16 @@ void    printlists(t_list *a, t_list *b)
     int i = 1;
     t_member    *trota = a->first;
     t_member    *trotb = b->first;
+
+printf("\n");
     while ((trota != NULL))
     {
         
-        printf("pile a ; val : %i ; i = %i\n", trota->val, i);
+        printf("pile a ; val : %i ; i = %i ; pos = %i\n", trota->val, i, trota->pos);
         trota = trota->suiv;
         i++;
     }
+
     printf("\n");
     i = 1;
     while ((trotb != NULL))
@@ -49,8 +58,7 @@ int main(int ac, char **av)
 		return (gest_error(&a, &b));
     
 
-    printf("debut test \n");
-    printlists(&a, &b);
+    //printf("debut test \n");
     // push_b(&a, &b);
     // printlists(&a, &b);
     // push_b(&a, &b);
@@ -67,7 +75,8 @@ int main(int ac, char **av)
     // printlists(&a, &b);
     // rrotate_r(&a, &b);
     push_swap(&a, &b);
-    printlists(&a, &b);
+    //printf("len = %i\n", a.len);
+    //printlists(&a, &b);
     libere(&a);
     libere(&b);
 	return (0);

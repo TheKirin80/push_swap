@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:31:39 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/04 19:54:16 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/08 01:57:45 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ int	swap_a(t_list *a, int i)
 	deux->suiv = un;
 	un->suiv = trois;
 	deux->prec = NULL;
-	trois->prec = un;
+	if (trois != NULL)
+		trois->prec = un;
 	a->first = deux;
+	if (trois == NULL)
+		a->last = un;
 	if (i == OK)
 		ft_putstr("sa\n");
 	return (0);
@@ -49,7 +52,8 @@ int	swap_b(t_list *b, int i)
 	deux->suiv = un;
 	un->suiv = trois;
 	deux->prec = NULL;
-	trois->prec = un;
+	if (trois != NULL)
+		trois->prec = un;
 	b->first = deux;
 	if (i == OK)
 		ft_putstr("sb\n");

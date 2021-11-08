@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:44:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/05 12:44:28 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/08 12:00:50 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	rempli_list(t_list *list, char **av)
 			return (ERROR);
 		i++;
 	}
+	position(list);
 	return (OK);
 }
 
@@ -86,4 +87,27 @@ int	test_list(t_list *list)
 			trot = trot->suiv;
 	}
 	return (dupli);
+}
+
+void position(t_list *list)
+{
+	int	pos;
+	t_member	*trot;
+	t_member	*mbpos;
+
+	mbpos = list->first;
+	length_list(list);
+	while (mbpos != NULL)
+	{
+		pos = 1;
+		trot = list->first;
+		while (trot != NULL)
+		{
+			if (mbpos->val < trot->val) 
+				pos++;
+			trot = trot->suiv;
+		}
+		mbpos->pos = list->len - pos;
+		mbpos = mbpos->suiv;	
+	}
 }

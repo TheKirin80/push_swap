@@ -1,4 +1,4 @@
-SRCS	= push.c rotate.c rrotate.c swap.c tool.c list.c error.c maint.c push_swap.c
+SRCS	= push.c rotate.c rrotate.c swap.c tool.c list.c list_bis.c error.c maint.c push_swap.c
 
 SRCSBON	=
 

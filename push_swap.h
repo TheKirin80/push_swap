@@ -15,6 +15,7 @@ typedef struct s_member t_member;
 struct s_member
 {
     int             val;
+	int				pos;
 	t_member		*suiv;
 	t_member		*prec;
 };
@@ -24,6 +25,7 @@ struct s_list
 {
 	t_member		*first;
 	t_member		*last;
+	int				len;
 };
 
 int		ft_strlen(char *s);
@@ -33,6 +35,8 @@ void	ft_putstr(char *s);
 void	init_list(t_list *list);
 int		rempli_list(t_list *list, char **av);
 int		test_list(t_list *list);
+void	position(t_list *list);
+void	length_list(t_list	*list);
 int		gest_error(t_list *a, t_list *b);
 int		libere(t_list *list);
 int		swap_a(t_list *a, int i);
@@ -43,9 +47,14 @@ int		push_b(t_list *a, t_list *b);
 int		rotate_a(t_list *list, int i);
 int		rotate_b(t_list *list, int i);
 int		rotate_r(t_list *a, t_list *b);
+void	rot(t_list *list, t_member *trot);
 int		rrotate_a(t_list *list, int i);
 int		rrotate_b(t_list *list, int i);
 int		rrotate_r(t_list *a, t_list *b);
+void	rrot(t_list *list, t_member *trot);
 int		croissant(t_list *list);
+void	recherche(t_list *a, t_list *b);
 int		push_swap(t_list *a, t_list *b);
+void    printlist(t_list *a);
+void    printlists(t_list *a, t_list *b);
 #endif
