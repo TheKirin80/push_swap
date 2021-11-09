@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:44:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 18:53:39 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:06:01 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,15 @@ int	rempli_list(t_list *list, char **av, int ac)
 	}
 	while (av[i] != NULL)
 	{
-		if ((test_chaine(av[i])) == 2)
-			i++;
-		else
-		{
-			if ((test_chaine(av[i])) == ERROR)
-				return (ERROR);
-			testres = ft_atoi(av[i]);
-			if (testres < INT_MIN || testres > INT_MAX)
-				return (ERROR);
-			res = testres;
-			if (add_element(list, res) == ERROR)
-				return (ERROR);
-			i++;
-		}
+		if ((test_chaine(av[i])) == ERROR)
+			return (ERROR);
+		testres = ft_atoi(av[i]);
+		if (testres < INT_MIN || testres > INT_MAX)
+			return (ERROR);
+		res = testres;
+		if (add_element(list, res) == ERROR)
+			return (ERROR);
+		i++;
 	}
 	position(list);
 	return (OK);

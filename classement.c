@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:04:01 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 15:27:16 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:15:52 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	top_back_choice(t_list *list, t_member *memb, char c)
 		trot = trot->suiv;
 	}
 	length_list(list);
-	if (j < (list->len)/2)
+	if (j < ((list->len)/2) + 1)
 		rot(c, list, trot);
 	else
 		rrot(c, list, trot);

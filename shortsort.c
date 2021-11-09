@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 00:43:10 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 14:50:11 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:16:42 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,12 @@ void	sort_five(t_list *a, t_list *b)
 	//printlists(a, b);
 	while (b->first != NULL)
 	{
-		//printf("-----------------------");
+		//printf("\n-----------------------\n");
 		//printlists(a, b);
 		classement(b, a, 'a');
-		//printlists(a, b);
+		//
 	}
+	//printlists(a, b);
 	top_back_choice(a, chercheur(a, 0), 'a');
 	
 }

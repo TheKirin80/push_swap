@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:34:01 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 18:52:25 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:07:54 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	test_chaine(char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	if (str[i] == '\0')
-		return (2);
+	if (str[i] == ' ' || str[i] == '\0')
+		return (ERROR);
 	while (str[i] != '\0')
 	{
 		if (!(str[i] > 47 && str[i] < 58))
