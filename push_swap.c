@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:48:59 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/08 19:59:14 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 02:02:56 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ int	croissant(t_list *list)
 
 void	vidage(t_list *a, t_list *b)
 {
+	top_back_choice(b, chercheur(b), 'b');
 	while (b->first != NULL)
+	{
 		push_a(a, b);
+		rrotate_b(b, OK);
+	}
 }
 
 void mv_in_tranche(t_list *list, int tranche)
@@ -83,8 +87,7 @@ void	recherche(t_list *a, t_list *b)
 		{
 			mv_in_tranche(a, tranche);
 			i++;
-			printf("\n\n TRANCHE : %i\n\n", tranche);
-			classement(a, b);
+			classement(a, b, 'b');
 		}	 
 	}
 }
@@ -93,7 +96,19 @@ int	push_swap(t_list *a, t_list *b)
 {
 	if (croissant(a) == OK)
 		return (OK);
-	recherche(a, b);
+	if (a->len == 2)
+		swap_a(a, OK);
+	else if (a->len == 3)
+		sort_three(a);
+	else if (a->len <= 5)
+		sort_five(a, b);
+	else
+	{
+		recherche(a, b);
+		vidage(a, b);
+	}
+	
+	
 
 	
 	return (0);

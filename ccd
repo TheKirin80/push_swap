@@ -1,1 +1,12 @@
 printf("je suis ici\n");
+printf("\nje suis apres la rotate\n");
+printf("\nje suis apres le push\n");
+printf("\nje suis apres le positionnement\n");
+printf("\n\n TRANCHE : %i\n\n", tranche);
+printf("\nvaleur du premier dans A : %i\n", ref->pos);
+printf("\nvaleur de longueur trouvé : %i\n", list->len);
+	printf("\nvaleur du terme trouvé : %i\n", save->pos);
+			//printf("\ndans bigger trot pos : %i\n", trot->pos);
+			printf("\nBIGGER OK\n");
+			printf("\ntrot val : %i\n", trot->pos);
+printf("\ndans ROT  trot pos : %i\n", trot->pos);

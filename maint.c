@@ -58,15 +58,15 @@ int main(int ac, char **av)
 		return (gest_error(&a, &b));
     
 
-    printf("debut test \n");
-    push_b(&a, &b);
-    printlists(&a, &b);
-    push_b(&a, &b);
-    printlists(&a, &b);
-    push_b(&a, &b);
-    printlists(&a, &b);
-    rotate_b(&a, OK);
-    rrotate_a(&b, OK);
+    //printf("debut test \n");
+    //push_b(&a, &b);
+    //printlists(&a, &b);
+    //push_b(&a, &b);
+    //printlists(&a, &b);
+    //push_b(&a, &b);
+    //printlists(&a, &b);
+    //rotate_b(&a, OK);
+    //rotate_a(&b, OK);
     // rotate_b(&b, OK);
     // printlists(&a, &b);
     // rrotate_a(&a, OK);
@@ -75,12 +75,12 @@ int main(int ac, char **av)
     // rotate_r(&a, &b);
     // printlists(&a, &b);
     // rrotate_r(&a, &b);
-    //push_swap(&a, &b);
+    push_swap(&a, &b);
     //printf("len = %i\n", a.len);
-    printlists(&a, &b);
-    rotate_b(&a, OK);
-    rrotate_a(&b, OK);
-    printlists(&a, &b);
+    //printlists(&a, &b);
+    //rotate_b(&a, OK);
+    //rotate_a(&b, OK);
+    //printlists(&a, &b);
     libere(&a);
     libere(&b);
 	return (0);

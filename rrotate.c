@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:05:22 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/08 20:48:09 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 00:33:03 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,6 @@ void	rrot(char c, t_list *list, t_member *trot)
 			rrotate_a(list, OK);
 	else
 		while (list->first != trot)
-		{
 			rrotate_b(list, OK);
-			printf("\ndans RROT  trot pos : %i\n", trot->pos);
-		}
 
 }
