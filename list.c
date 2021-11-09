@@ -6,17 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:44:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 19:06:01 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:42:48 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	init_list(t_list *list)
-{
-	list->first = NULL;
-	list->last = NULL;
-}
 
 int	add_element(t_list *list, int add)
 {
@@ -36,14 +30,25 @@ int	add_element(t_list *list, int add)
 	return (OK);
 }
 
+int	test_in_rempli(char *s, t_list *list)
+{
+	long	testres;
+	int		res;
+
+	if (test_chaine(s) == ERROR)
+		return (ERROR);
+	testres = ft_atoi(s);
+	if (testres < INT_MIN || testres > INT_MAX)
+		return (ERROR);
+	res = testres;
+	if (add_element(list, res) == ERROR)
+		return (ERROR);
+	return (OK);
+}
+
 int	rempli_list(t_list *list, char **av, int ac)
 {
 	int		i;
-	long	testres;
-	int		res;
-	int j,k;
-
-	j= k =0;
 
 	i = 1;
 	init_list(list);
@@ -56,26 +61,26 @@ int	rempli_list(t_list *list, char **av, int ac)
 	}
 	while (av[i] != NULL)
 	{
-		if ((test_chaine(av[i])) == ERROR)
+		if (test_in_rempli(av[i], list) == ERROR)
+		{
+			if (ac == 2)
+				libere_split(av);
 			return (ERROR);
-		testres = ft_atoi(av[i]);
-		if (testres < INT_MIN || testres > INT_MAX)
-			return (ERROR);
-		res = testres;
-		if (add_element(list, res) == ERROR)
-			return (ERROR);
+		}
 		i++;
 	}
+	if (ac == 2)
+		libere_split(av);
 	position(list);
 	return (OK);
 }
 
 int	test_list(t_list *list)
 {
-	int	save;
+	int			save;
 	t_member	*trot;
 	t_member	*verif;
-	int	dupli;
+	int			dupli;
 
 	dupli = OK;
 	trot = list->first;
@@ -97,9 +102,9 @@ int	test_list(t_list *list)
 	return (dupli);
 }
 
-void position(t_list *list)
+void	position(t_list *list)
 {
-	int	pos;
+	int			pos;
 	t_member	*trot;
 	t_member	*mbpos;
 
@@ -111,11 +116,11 @@ void position(t_list *list)
 		trot = list->first;
 		while (trot != NULL)
 		{
-			if (mbpos->val < trot->val) 
+			if (mbpos->val < trot->val)
 				pos++;
 			trot = trot->suiv;
 		}
 		mbpos->pos = list->len - pos;
-		mbpos = mbpos->suiv;	
+		mbpos = mbpos->suiv;
 	}
 }

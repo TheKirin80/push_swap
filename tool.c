@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:34:01 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 19:07:54 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:58:25 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	test_chaine(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-		str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
@@ -33,18 +33,18 @@ int	test_chaine(char *str)
 	return (OK);
 }
 
-long		ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
 	int		i;
-	long		signe;
+	long	signe;
 	long	res;
 	long	ret;
 
 	i = 0;
 	signe = 1;
 	res = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-		str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -83,7 +83,7 @@ void	ft_putstr(char *s)
 	}
 }
 
-int		ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
 	int		i;
 

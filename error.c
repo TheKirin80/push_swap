@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:45:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 17:59:47 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:10:45 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	gest_error(t_list *a, t_list *b)
 {
-	// if (a->first != NULL)
-		ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Error\n", 2);
 	libere(a);
 	libere(b);
-	return (0);
+	return (1);
 }
 
 int	libere(t_list *list)
@@ -33,7 +32,7 @@ int	libere(t_list *list)
 	else
 	{
 		a_free = list->first;
-		while (!(a_free))
+		while (a_free)
 		{
 			suiv = a_free->suiv;
 			free(a_free);
@@ -43,4 +42,17 @@ int	libere(t_list *list)
 	list->first = NULL;
 	list->last = NULL;
 	return (OK);
+}
+
+void	libere_split(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i] != 0)
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
 }

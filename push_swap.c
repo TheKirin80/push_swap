@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:48:59 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 18:44:43 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:46:19 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	croissant(t_list *list)
 {
-	int	verif;
-	int	val;
+	int			verif;
+	int			val;
 	t_member	*trot;
 
 	trot = list->first;
@@ -41,10 +41,10 @@ void	vidage(t_list *a, t_list *b)
 	}
 }
 
-void mv_in_tranche(t_list *list, int tranche)
+void	mv_in_tranche(t_list *list, int tranche)
 {
-	int	mtop;
-	int mback;
+	int			mtop;
+	int			mback;
 	t_member	*trotback;
 	t_member	*trottop;
 
@@ -72,8 +72,8 @@ void mv_in_tranche(t_list *list, int tranche)
 void	recherche(t_list *a, t_list *b)
 {
 	int	i;
-	int tranche;
-	int ecart;
+	int	tranche;
+	int	ecart;
 
 	i = 0;
 	if (a->len > 100)
@@ -91,7 +91,7 @@ void	recherche(t_list *a, t_list *b)
 			mv_in_tranche(a, tranche);
 			i++;
 			classement(a, b, 'b');
-		}	 
+		}
 	}
 }
 
@@ -110,12 +110,5 @@ int	push_swap(t_list *a, t_list *b)
 		recherche(a, b);
 		vidage(a, b);
 	}
-	
-	
-
-	
 	return (0);
 }
-
-
-

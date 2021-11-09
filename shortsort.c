@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 00:43:10 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 19:16:42 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:49:34 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	sort_three(t_list *a)
 	int	min;
 	int	inter;
 
-	set_three(a, &max, &min , &inter);
+	set_three(a, &max, &min, &inter);
 	if (a->last->pos == max && a->first->pos == inter)
 		swap_a(a, OK);
 	else if (a->first->suiv->pos == inter)
@@ -72,20 +72,10 @@ void	sort_five(t_list *a, t_list *b)
 		length_list(a);
 	}
 	if (croissant(a) == ERROR)
-		sort_three(a);	
+		sort_three(a);
 	if (croissant(b) == ERROR)
 		swap_b(b, OK);
-				// printf("\nICI : valeur de a : %i ; valeur de b : %i\n", a->last->pos, b->last->pos);
-				// 	printlists(a, b);
-	//printlists(a, b);
 	while (b->first != NULL)
-	{
-		//printf("\n-----------------------\n");
-		//printlists(a, b);
 		classement(b, a, 'a');
-		//
-	}
-	//printlists(a, b);
 	top_back_choice(a, chercheur(a, 0), 'a');
-	
 }

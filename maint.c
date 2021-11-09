@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   maint.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 22:08:35 by akefeder          #+#    #+#             */
+/*   Updated: 2021/11/09 22:08:38 by akefeder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void printfi(int i)
@@ -47,18 +59,17 @@ printf("\n");
 }
 
 
-int main(int ac, char **av)
+int main(int ac, char **argv)
 {
 	t_list		a;
 	t_list		b;
 
     // printf("av[1] = %d\n", av[1][0]);
-    if(ac == 1 || (ac == 2 && av[1][0] == 0))
-        exit(1);
+    if(ac == 1 || (ac == 2 && argv[1][0] == 0))
+        exit(0);
 
 	init_list(&b);
-
-	if (rempli_list(&a, av, ac) == ERROR || test_list(&a) == ERROR)
+	if (rempli_list(&a, argv, ac) == ERROR || test_list(&a) == ERROR)
     {
 		return (gest_error(&a, &b));
     }

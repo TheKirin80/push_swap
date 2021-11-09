@@ -1,4 +1,4 @@
-SRCS	= ft_split.c shortsort.c classement.c push.c rotate.c rrotate.c swap.c tool.c list.c list_bis.c error.c maint.c push_swap.c
+SRCS	= main.c ft_split.c shortsort.c classement.c classement_bis.c push.c rotate.c rrotate.c swap.c tool.c list.c list_bis.c error.c push_swap.c
 
 SRCSBON	=
 
@@ -14,7 +14,7 @@ CC 		= gcc
 
 RM 		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 .c.o :
 			${CC} ${CFLAGS} ${INC} -o $@ -c $<
