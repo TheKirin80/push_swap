@@ -52,11 +52,16 @@ int main(int ac, char **av)
 	t_list		a;
 	t_list		b;
 
-    (void)ac;
+    // printf("av[1] = %d\n", av[1][0]);
+    if(ac == 1 || (ac == 2 && av[1][0] == 0))
+        exit(1);
+
 	init_list(&b);
-	if (rempli_list(&a, av) == ERROR || test_list(&a) == ERROR)
+
+	if (rempli_list(&a, av, ac) == ERROR || test_list(&a) == ERROR)
+    {
 		return (gest_error(&a, &b));
-    
+    }
 
     //printf("debut test \n");
     //push_b(&a, &b);

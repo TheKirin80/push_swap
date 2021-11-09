@@ -10,3 +10,14 @@ printf("\nvaleur de longueur trouvé : %i\n", list->len);
 			printf("\nBIGGER OK\n");
 			printf("\ntrot val : %i\n", trot->pos);
 printf("\ndans ROT  trot pos : %i\n", trot->pos);
+	while (av[j] != NULL)
+	{
+		while (av[j][k] != '\0')
+		{
+			printf("%c", av[j][k]);
+			k++;
+		}
+		printf("\n");
+		j++;
+		k = 0;
+	}

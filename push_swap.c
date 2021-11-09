@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:48:59 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 14:46:03 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 18:44:43 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,10 @@ void	recherche(t_list *a, t_list *b)
 	int ecart;
 
 	i = 0;
-	ecart = ((a->len) / 5);
+	if (a->len > 100)
+		ecart = ((a->len) / 11);
+	else
+		ecart = ((a->len) / 6);
 	tranche = 0;
 	while (i < a->len && a->first != NULL)
 	{

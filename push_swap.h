@@ -31,9 +31,10 @@ struct s_list
 int		ft_strlen(char *s);
 long	ft_atoi(char *str);
 int		test_chaine(char *str);
+void	ft_putstr_fd(char *s, int fd);
 void	ft_putstr(char *s);
 void	init_list(t_list *list);
-int		rempli_list(t_list *list, char **av);
+int		rempli_list(t_list *list, char **av, int ac);
 int		test_list(t_list *list);
 void	position(t_list *list);
 void	length_list(t_list	*list);
@@ -60,6 +61,7 @@ void	classement(t_list *a, t_list *b, char c);
 int		push_swap(t_list *a, t_list *b);
 void	sort_three(t_list *a);
 void	sort_five(t_list *a, t_list *b);
+char	**ft_split(const char *s, char c);
 void    printlist(t_list *a);
 void    printlists(t_list *a, t_list *b);
 #endif
