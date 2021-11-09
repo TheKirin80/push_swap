@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:28:07 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/08 01:49:14 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 13:40:00 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	insert(t_list *list, t_member *save)
 {
-	t_member	*pass;
-
 	save->prec = NULL;
 	save->suiv = NULL;
 	if (list->first == NULL)
@@ -25,8 +23,7 @@ void	insert(t_list *list, t_member *save)
 	}
 	else
 	{
-		pass = list->first;
-		pass->prec = save;
+		list->first->prec = save;
 		save->suiv = list->first;
 		list->first = save;
 	}

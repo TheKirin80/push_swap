@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:48:59 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 02:02:56 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 14:46:03 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	croissant(t_list *list)
 
 void	vidage(t_list *a, t_list *b)
 {
-	top_back_choice(b, chercheur(b), 'b');
+	top_back_choice(b, chercheur(b, b->len), 'b');
 	while (b->first != NULL)
 	{
 		push_a(a, b);

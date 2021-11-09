@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:31:39 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/08 01:57:45 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 13:44:02 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	swap_b(t_list *b, int i)
 	if (trois != NULL)
 		trois->prec = un;
 	b->first = deux;
+	if (trois == NULL)
+		b->last = un;
 	if (i == OK)
 		ft_putstr("sb\n");
 	return (0);

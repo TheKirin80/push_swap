@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:04:01 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 02:18:22 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:27:16 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,36 @@ t_member*	is_bigger(t_list *list, t_member *ref, t_member *trot)
 
 	val = OK;
 	save = list->first;
+	//printf("\nref-> pos = %i\n", ref->pos);
+	while (save != NULL)
+	{
+		if (save->pos > ref->pos)
+		{
+			val = ERROR;
+		}
+		if (save->pos < trot->pos)
+			trot = save;
+		save = save->suiv;
+	}
+	
+	//printf("\ntrot-> pos = %i\n", trot->pos);
+	if (val == ERROR)
+		trot = NULL;
+	
+	return (trot);
+}
+
+t_member*	is_smaller(t_list *list, t_member *ref, t_member *trot)
+{
+	int	val;
+	t_member	*save;
+
+	val = OK;
+	save = list->first;
+	trot = list->first;
 	while (save != NULL)
 	{	
-		if (save->pos > ref->pos)
+		if (save->pos < ref->pos)
 			val = ERROR;
 		if (save->pos < trot->pos)
 			trot = save;
@@ -39,15 +66,12 @@ void	top_back_choice(t_list *list, t_member *memb, char c)
 
 	j = 0;
 	trot = list->first;
-	printf("\nje suis avant le while\n");
 	while (memb->pos != trot->pos)
 	{
 		j++;
 		trot = trot->suiv;
 	}
-	printf("\nje suis apres le while\n");
 	length_list(list);
-	printf("\nje suis apres la len\n");
 	if (j < (list->len)/2)
 		rot(c, list, trot);
 	else
@@ -63,11 +87,12 @@ t_member* is_just_smallest(t_list *list, t_member *ref, t_member *trot)
 	smallest = NULL;
 	while (save != NULL)
 	{
-		if (save->pos < ref->pos)
+		// printf("je suis dans smallest, save:pos = %i | ref:pos = %i\n", save->pos, ref->pos);
+		if (save->pos > ref->pos)
 		{
 			if (smallest != NULL)
 			{
-				if (save->pos > smallest->pos)
+				if (save->pos < smallest->pos)
 					smallest = save;
 			}
 			else
@@ -79,12 +104,12 @@ t_member* is_just_smallest(t_list *list, t_member *ref, t_member *trot)
 	return (trot);
 }
 
-t_member*	chercheur(t_list *list)
+t_member*	chercheur(t_list *list, int i)
 {
 	t_member	*save;
 
 	save = list->first;
-	while ((list->len) != save->pos)
+	while (i != save->pos)
 		save = save->suiv;
 	return (save); 
 }
@@ -92,6 +117,10 @@ t_member*	chercheur(t_list *list)
 void	classement(t_list *a, t_list *b, char c)
 {
 	t_member	*trot;
+ 
+ 		// if(b->first->pos == 2)
+			// exit(0);
+	
 
 	if (b->first != NULL)
 	{
@@ -100,12 +129,29 @@ void	classement(t_list *a, t_list *b, char c)
 			top_back_choice(b, trot, c);
 		else 
 		{
-			trot = is_just_smallest(b, a->first, trot);
-			top_back_choice(b, trot, c);
+			trot = is_smaller(b, a->first, trot);
+			if (trot)
+				top_back_choice(b, trot, c);
+			else
+			{
+				trot = is_just_smallest(b, a->first, trot);				
+				top_back_choice(b, trot, c);
+			}
 		}
 	}
 	if (c == 'a')
-		push_a(a, b);
+	{
+		//printf("\nje push dans a\n");
+		//printf("\nvaleur de b : %i ; valeur de a : %i\n", a->first->pos, b->first->pos);
+		// printf("\nsuiv valeur de b : %i ; valeur de a : %i\n", a->first->suiv->pos, b->first->suiv->pos);
+		//printf("\nvaleur de b : %i ; valeur de a : %i\n", a->last->pos, b->last->pos);
+		// printlists(a, b);
+		push_a(b, a);
+	}
 	else
+	{
+		//printf("\nje push dans b\n");
 		push_b(a, b);
+		// printlists(a, b);
+	}
 }

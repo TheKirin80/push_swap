@@ -29,7 +29,7 @@ printf("\n");
     while ((trota != NULL))
     {
         
-        printf("pile a ; val : %i ; i = %i ; pos = %i\n", trota->val, i, trota->pos);
+        printf("pile a ; val : %i ; pos = %i\n", trota->val, trota->pos);
         trota = trota->suiv;
         i++;
     }
@@ -39,7 +39,7 @@ printf("\n");
     while ((trotb != NULL))
     {
         
-        printf("pile b ; val : %i ; i = %i ; pos = %i\n", trotb->val, i, trotb->pos);
+        printf("pile b ; val : %i ; pos = %i\n", trotb->val, trotb->pos);
         trotb = trotb->suiv;
         i++;
     }

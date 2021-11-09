@@ -54,7 +54,7 @@ int		rrotate_r(t_list *a, t_list *b);
 void	rrot(char c, t_list *list, t_member *trot);
 int		croissant(t_list *list);
 void	recherche(t_list *a, t_list *b);
-t_member*	chercheur(t_list *list);
+t_member*	chercheur(t_list *list, int i);
 void	top_back_choice(t_list *list, t_member *memb, char c);
 void	classement(t_list *a, t_list *b, char c);
 int		push_swap(t_list *a, t_list *b);
