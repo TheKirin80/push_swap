@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:28:55 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 21:12:15 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:31:31 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,34 +54,6 @@ int	ft_verif_arg(const char *s, char c)
 	return (0);
 }
 
-int	ft_remplissage(const char *s, char **split, char sep)
-{
-	int		i;
-	int		deb;
-	int		x;
-	int		y;
-
-	i = -1;
-	deb = 0;
-	x = -1;
-	while (s[++i] != '\0' && ((y = -1) == -1))
-	{
-		if ((ft_test(s[i], sep) == 1 && deb > 0) || s[i + 1] == '\0')
-		{
-			split[++x] = (char *)malloc((deb + 5) * sizeof(char));
-			deb = i - deb - 1;
-			while (++deb < i)
-				(ft_test(s[deb], sep) == 0) ? split[x][++y] = s[deb] : 0;
-			if ((((deb = 0) == 0)) && s[i + 1] == '\0')
-				(ft_test(s[i], sep) == 0) ? split[x][++y] = s[i] : 0;
-			split[x][++y] = '\0';
-		}
-		else
-			(ft_test(s[i], sep) == 0) ? deb++ : 0;
-	}
-	return (x);
-}
-
 char	**ft_split(const char *s, char c)
 {
 	char	**split;
@@ -93,15 +65,12 @@ char	**ft_split(const char *s, char c)
 		split[0] = 0;
 		return (split);
 	}
-	split = (char **)malloc((ft_size(s, c) + 5) * sizeof(char *));
+	split = (char **)malloc((ft_size(s, c) + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
 	x = ft_remplissage(s, split, c);
 	if (split[x][0] != '\0')
-	{
-		split[x + 1] = (char *)malloc(1 * sizeof(char));
 		split[x + 1] = 0;
-	}
 	else
 		split[x] = 0;
 	return (split);

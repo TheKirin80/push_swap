@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:45:18 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 21:10:45 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/10 12:26:03 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	libere_split(char **av)
 		free(av[i]);
 		i++;
 	}
+	free(av[i]);
 	free(av);
 }

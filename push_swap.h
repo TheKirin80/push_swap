@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:58:52 by akefeder          #+#    #+#             */
-/*   Updated: 2021/11/09 22:01:38 by akefeder         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:28:43 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void		classement(t_list *a, t_list *b, char c);
 int			push_swap(t_list *a, t_list *b);
 void		sort_three(t_list *a);
 void		sort_five(t_list *a, t_list *b);
+int			ft_test(char sep, char c);
+int			ft_remplissage(const char *s, char **split, char sep);
 char		**ft_split(const char *s, char c);
 void		libere_split(char **av);
 #endif
